@@ -15,11 +15,21 @@ public class Lesson4_FlowControl {
      * Подсказка: массив может быть пустой
      *
      * @param strings массив строк случайной длины
-     *
      * @return самую длинную строку из полученного массива
      */
     public static String task1(String[] strings) {
-        return null;
+        if (strings.length != 0) {
+            int max = strings[0].length();
+            for (int i = 1; i < strings.length; i++) {
+                if (strings[i].length() > strings[i - 1].length())
+                    max = strings[i].length();
+            }
+            for (int i = 0; i < strings.length; i++) {
+                if (strings[i].length() == max)
+                    return strings[i];
+            }
+        }
+        return "";
     }
 
     /**
@@ -38,10 +48,25 @@ public class Lesson4_FlowControl {
      * @param i         первый числовой параметр
      * @param k         второй числовой параметр
      * @param operation символ, указывающий на операцию
-     *
      * @return целочисленный результат выполнения операции
      */
     public static int task2(int i, int k, char operation) {
-        return 0;
+        if (k == 0 && (operation == '/' || operation == '%'))
+            return 0;
+        switch (operation) {
+            case '+':
+                return i + k;
+            case '-':
+                return i - k;
+            case '*':
+                return i * k;
+            case '/':
+                return i / k;
+            case '%':
+                return i % k;
+            default:
+                return 0;
+
+        }
     }
 }
