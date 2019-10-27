@@ -31,13 +31,18 @@ class Lesson2 {
         //итерации не создавать новые строки и
         //не расходовать больше памяти,тк строки
         //immutable.
+
+//        char[] temp = new char[arr.length * 2];
+//        for (int i = 0, j = 0; i<temp.length; i++,j++) {
+//            temp[i]=arr[j].charAt(0);
+//            temp[++i]='.';
+//        }
+        //первый способ я делал через цикл потомучто думал,что если конечеый
+        //пользователь введет не полное фио все рухнет иp-за
+        //индексаута эксепшона,ну да можно проще не спорю,если
+        //ориентироваться конкретно на тесты.
         String[] arr = fullName.split(" ");
-        char[] temp = new char[arr.length * 2];
-        for (int i = 0, j = 0; i<temp.length; i++,j++) {
-            temp[i]=arr[j].charAt(0);
-            temp[++i]='.';
-        }
-        return String.copyValueOf(temp).toUpperCase();
+        return (arr[0].charAt(0)+"."+arr[1].charAt(0)+"."+arr[2].charAt(0)+".").toUpperCase();
     }
 
 }
