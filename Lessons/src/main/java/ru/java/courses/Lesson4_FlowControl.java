@@ -19,15 +19,13 @@ public class Lesson4_FlowControl {
      */
     public static String task1(String[] strings) {
         if (strings.length != 0) {
-            int max = strings[0].length();
+            String max = strings[0];
             for (int i = 1; i < strings.length; i++) {
-                if (strings[i].length() > strings[i - 1].length())
-                    max = strings[i].length();
+                if (strings[i].length() > max.length()) {
+                    max = strings[i];
+                }
             }
-            for (int i = 0; i < strings.length; i++) {
-                if (strings[i].length() == max)
-                    return strings[i];
-            }
+            return max;
         }
         return "";
     }
